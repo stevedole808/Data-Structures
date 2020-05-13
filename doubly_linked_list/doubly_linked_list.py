@@ -66,23 +66,68 @@ class DoublyLinkedList:
     current tail's previous node the new tail of the List.
     Returns the value of the removed Node."""
     def remove_from_tail(self):
-        pass
+        value = self.tail.value
+        self.delete(self.tail)
+        return value
+
+
 
     """Removes the input node from its current spot in the 
     List and inserts it as the new head node of the List."""
     def move_to_front(self, node):
-        pass
+        #  check if the node is  the head
+        if node is self.head:
+            return None
+        # store a reference to the node we're going to move
+        value = node
+        if node is self.tail:
+            self.remove_from_tail()
+        else:
+            node.delete()
+        self.add_to_head(value)
 
     """Removes the input node from its current spot in the 
     List and inserts it as the new tail node of the List."""
     def move_to_end(self, node):
-        pass
+        if node is self.tail:
+            return None
+        value = node.value
+        if node is self.head:
+            self.remove_from_head()
+        else:
+            node.delete()
+        self.add_to_tail(value)
 
     """Removes a node from the list and handles cases where
     the node was the head or the tail"""
     def delete(self, node):
-        pass
-        
+        self.length -= 1
+        if not self.head and not self.tail:
+            return None
+        self.length -= 1
+        if self.head is self.tail:
+            self.head = None
+            self.tail = None
+        # check if the node is the head
+        elif self.head is node:
+            self.head = node.next
+            node.delete()
+        # check if the node is the tail
+        elif self.tail is node:
+            self.tail = node.prev
+            node.delete()
+        # otherwise, there's no additional refernece we need to update
+        else:
+            node.delete()
+
     """Returns the highest value currently in the list"""
     def get_max(self):
-        pass
+        # init a variable that will keep trac of the largest element we've seen so far
+        current_max = self.head.value
+        current = self.head
+        while current is not None:
+            if current.value > current_max:
+                current_max = current.value
+            current = current.next
+        return current_max
+        
