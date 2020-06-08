@@ -84,3 +84,5 @@ class Queue:
     def dequeue(self):
         self.size -= 1
         self.storage.remove_head()
+
+        
