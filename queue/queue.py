@@ -182,8 +182,8 @@ class Queue:
     def dequeue(self):
         if self.size == 0:
             return None
-        else:
-            self.size -= 1
-            data = self.storage.head.value
-            self.head = self.storage.head.next_node
-            return data
+        self.size -= 1
+        # data = self.storage.head.value
+        # self.head = self.storage.head.next_node
+        # return data
+        return self.storage.remove_head()

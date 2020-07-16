@@ -130,31 +130,31 @@ class LinkedList:
 # LINKED LIST IMPLEMENTATION
 
 
-# class Stack:
-#     def __init__(self):
-#         self.size = 0
-#         self.storage = LinkedList()
+class Stack:
+    def __init__(self):
+        self.size = 0
+        self.storage = LinkedList()
 
-#     def __len__(self):
-#         return self.size
+    def __len__(self):
+        return self.size
     
-#     def push(self, value):
-#        self.storage.add_to_tail(value)
-#        self.size += 1
-#         # count = self.size
-#         # value = Node(value)
-#         # if self.storage is None:
-#         #     self.storage.add_to_tail(value)
-#         #     value = self.storage.head
-#         #     count += 1
-#         # else: 
-#         #     self.storage.add_to_tail(value)
-#         #     count += 1
+    def push(self, value):
+       self.storage.add_to_tail(value)
+       self.size += 1
+        # count = self.size
+        # value = Node(value)
+        # if self.storage is None:
+        #     self.storage.add_to_tail(value)
+        #     value = self.storage.head
+        #     count += 1
+        # else: 
+        #     self.storage.add_to_tail(value)
+        #     count += 1
             
-#     def pop(self):
-#         if self.size == 0:
-#             return None
-#         else:
-#             self.size -= 1
-#         return self.storage.remove_tail()
+    def pop(self):
+        if self.size == 0:
+            return None
+        else:
+            self.size -= 1
+        return self.storage.remove_tail()
 
