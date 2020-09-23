@@ -1,5 +1,6 @@
 # Data Structures 
 
+
 Topics:
  * Linked Lists
  * Queues
